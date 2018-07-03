@@ -1,0 +1,60 @@
+#:kivy 1.0.9
+
+<Brick>:
+    size: 25, 130
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Ball>:
+    size: 50, 50 
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size          
+
+<Paddle>:
+    size: 25, 200
+    canvas:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+<Game>:
+    ball: ball
+    player1: player
+    # player2: player_right
+    brick1: brick_one
+    
+    canvas:
+        # Rectangle:
+        #     pos: self.center_x-5, 0
+        #     size: 10, self.height
+    
+    Label:
+        font_size: 70  
+        center_x: root.width / 4
+        top: root.top - 50
+        text: str(root.player1.score)
+        
+    # Label:
+    #     font_size: 70  
+    #     center_x: root.width * 3 / 4
+    #     top: root.top - 50
+    #     # text: str(root.player2.score)
+    
+    Ball:
+        id: ball
+        center: self.parent.center
+        
+    Brick:
+        id: brick_one
+        x: root.width-self.width - 10
+        center_y: root.top - 70
+
+    Paddle:
+        id: player
+        x: 0
+        center_y: root.center_y
+        
