@@ -42,6 +42,11 @@ class Game(Widget):
     ball = ObjectProperty(None)
     player1 = ObjectProperty(None)
     brick1 = ObjectProperty(None)
+    brick2 = ObjectProperty(None)
+    brick3 = ObjectProperty(None)
+    brick4 = ObjectProperty(None)
+    brick5 = ObjectProperty(None)
+    brick6 = ObjectProperty(None)
     # player2 = ObjectProperty(None)
 
     def serve_ball(self, vel=(4, 0)):
@@ -55,6 +60,15 @@ class Game(Widget):
         # bounce of paddles
         self.player1.bounce_ball(self.ball)
         self.brick1.hitBrick(self.ball)
+        self.brick2.hitBrick(self.ball)
+        self.brick3.hitBrick(self.ball)
+        self.brick4.hitBrick(self.ball)
+        self.brick5.hitBrick(self.ball)
+        self.brick6.hitBrick(self.ball)
+        self.brick7.hitBrick(self.ball)
+        self.brick8.hitBrick(self.ball)
+        self.brick9.hitBrick(self.ball)
+        self.brick10.hitBrick(self.ball)
         # self.player2.bounce_ball(self.ball)
 
         # bounce ball off bottom or top
@@ -68,7 +82,17 @@ class Game(Widget):
         if self.ball.x < self.x:
             # self.player2.score += 1
             self.serve_ball(vel=(4, 0))
-            self.brick1.x = 765
+            print(self.brick1.x)
+            self.brick1.x = self.width - 35
+            self.brick2.x = self.width - 35
+            self.brick3.x = self.width - 35
+            self.brick4.x = self.width - 85
+            self.brick5.x = self.width - 85
+            self.brick6.x = self.width - 85
+            self.brick7.x = self.width - 135
+            self.brick8.x = self.width - 135
+            self.brick9.x = self.width - 135
+            self.brick10.x = self.width - 185
         # if self.ball.x > self.width:
         #     self.player1.score += 1
         #     self.serve_ball(vel=(-4, 0))
