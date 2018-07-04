@@ -35,23 +35,26 @@
     brick8: brick_eight
     brick9: brick_nine
     brick10: brick_ten
+    # testButton: test_button
 
-    canvas:[-8.574355240000006, 0.48346681823204063]
+    canvas:
         # Rectangle:
         #     pos: self.center_x-5, 0
         #     size: 10, self.height
     
-    Label:
-        font_size: 70  
-        center_x: root.width / 4
-        top: root.top - 50
-        text: str(root.player1.score)
-        
     # Label:
     #     font_size: 70  
-    #     center_x: root.width * 3 / 4
+    #     center_x: root.width / 4
     #     top: root.top - 50
-    #     # text: str(root.player2.score)
+    #     text: str(root.player1.score)
+        
+    # Label:
+    #     id: test_button
+    #     font_size: 70  
+    #     center_x: root.width / 4
+    #     # center_x: root.width * 3 / 4
+    #     top: root.top - 50
+    #     text: 'Game Over'
     
     Ball:
         id: ball
