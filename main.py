@@ -1,4 +1,6 @@
 from kivy.app import App
+from kivy.lang import Builder
+from kivy.uix.screenmanager import ScreenManager, Screen, WipeTransition
 from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
@@ -7,7 +9,6 @@ from kivy.properties import NumericProperty, ReferenceListProperty,\
 from kivy.vector import Vector
 from kivy.clock import Clock
 from random import randint
-
 class Brick(Widget):
     def hitBrick(self, ball):
         if self.collide_widget(ball):
@@ -54,14 +55,18 @@ class Game(Widget):
     brick8 = ObjectProperty(None)
     brick9 = ObjectProperty(None)
     brick10 = ObjectProperty(None)
+    test = Button(text='hello1')
+    def __init__(self, *args, **kwargs):
+        super(Game, self).__init__(*args, **kwargs)
+        self.start()
 
-    def test(self):
-        layout = BoxLayout(orientation='vertical')
-        b1 = Button(text='button 1')
-        b2 = Button(text='button 2')
-        layout.add_widget(b1)
-        layout.add_widget(b2)
-        return layout
+    # def test(self):
+    #     layout = BoxLayout(orientation='vertical')
+    #     b1 = Button(text='button 1')
+    #     b2 = Button(text='button 2')
+    #     layout.add_widget(b1)
+    #     layout.add_widget(b2)
+    #     return layout
 
     def start(self):
         Clock.unschedule(self.update)
@@ -84,7 +89,6 @@ class Game(Widget):
         self.brick10.x = self.width - 185
 
     def serve_ball(self, vel=(-8.574355240000006, 0.48346681823204063)):
-        # print(self.ball.center)
         self.ball.center = [104.0, 300]
         print(vel)
         self.ball.velocity = vel
@@ -92,7 +96,6 @@ class Game(Widget):
     def update(self, dt):
         self.ball.move()
 
-        # bounce of paddles
         self.player1.bounce_ball(self.ball)
         self.brick1.hitBrick(self.ball)
         self.brick2.hitBrick(self.ball)
@@ -104,7 +107,6 @@ class Game(Widget):
         self.brick8.hitBrick(self.ball)
         self.brick9.hitBrick(self.ball)
         self.brick10.hitBrick(self.ball)
-        # self.player2.bounce_ball(self.ball)
         if (
             self.brick10.x == -150 and
             self.brick9.x == -150 and 
@@ -120,40 +122,37 @@ class Game(Widget):
             self.stop()
             self.serve_ball(vel=(4, 0))
             self.reset()
-            self.start()
+            # self.test.text = 'game Over'
+            print(self.parent.height)
+            self.test.center_x = self.parent.height / 2
+            self.test.center_y = self.parent.height / 2
+            print('test x',self.test.center)
+            # self.start()
         
-        # bounce ball off bottom or top
         if (self.ball.y < self.y) or (self.ball.top > self.top):
             self.ball.velocity_y *= -1
 
         if (self.ball.x < 0) or (self.ball.right > self.width):
             self.ball.velocity_x *= -1
 
-        # went of to a side to score point?
         if self.ball.x < self.x:
-            # self.player2.score += 1
             self.serve_ball(vel=(4, 0))
             print(self.brick1.x)
             self.reset()
-        # if self.ball.x > self.width:
-        #     self.player1.score += 1
-        #     self.serve_ball(vel=(-4, 0))
 
     def on_touch_move(self, touch):
         if touch.x < self.width / 3:
             self.player1.center_y = touch.y
-        # if touch.x > self.width - self.width / 3:
-            # self.player2.center_y = touch.y
 
 
-class brickBreaker(App):
+class Manager(ScreenManager):
+    pass
+
+class ScreensApp(App):
     def build(self):
-        game = Game()
-        game.serve_ball()
-        game.start()
-        
-        return game
-
+        root = self.root
+        self.load_kv('brickBreaker.kv')
+        return Manager(transition=WipeTransition())
 
 if __name__ == '__main__':
-    brickBreaker().run()
+    ScreensApp().run()

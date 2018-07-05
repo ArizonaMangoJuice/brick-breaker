@@ -35,13 +35,22 @@
     brick8: brick_eight
     brick9: brick_nine
     brick10: brick_ten
-    # testButton: test_button
-
+    test: testing
     canvas:
         # Rectangle:
         #     pos: self.center_x-5, 0
         #     size: 10, self.height
     
+    Button:
+        id: testing
+        text: 'game Over! Click to play again'
+        halign: 'center'
+        valign: 'middle'
+        font_size: 15
+        size: 250, self.height
+        x: -500
+
+
     # Label:
     #     font_size: 70  
     #     center_x: root.width / 4
@@ -114,4 +123,22 @@
         id: player
         x: 0
         center_y: root.center_y
-        
+<Manager>:
+    id: screen_manager
+    # test: testing
+
+    Screen:
+        name: 'home'
+        Button:
+            text: 'Play BrickBreaker'
+            halign: 'center'
+            valign: 'middle'
+            font_size: 100
+            text_size: self.size
+            on_release: root.current = 'game';game.serve_ball(vel=(4, 0))
+
+    Screen:
+        name: 'game'
+        Game:
+            id: game
+            
