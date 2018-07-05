@@ -49,6 +49,7 @@
         font_size: 15
         size: 250, self.height
         x: -500
+        on_release: root.hideRestart()
 
 
     # Label:
@@ -72,52 +73,53 @@
     Brick:
         id: brick_one
         x: root.width-self.width - 10
-        center_y: root.top - 130
-
+        center_y: root.top/2 + 170
+        # 130
     Brick:
         id: brick_two
         x: root.width-self.width - 10
-        center_y: root.top - 290
+        center_y: root.top/2 + 10
+        # 290
 
     Brick:
         id: brick_three
         x: root.width-self.width - 10
-        center_y: root.top - 450
+        center_y: root.top/2 - 150
 
     Brick:
         id: brick_four
         x: root.width-self.width - 60
-        center_y: root.top - 130
+        center_y: root.top/2 + 170
 
     Brick:
         id: brick_five
         x: root.width-self.width - 60
-        center_y: root.top - 290
+        center_y: root.top/2 + 10
 
     Brick:
         id: brick_six
         x: root.width-self.width - 60
-        center_y: root.top - 450
+        center_y: root.top/2 - 150
 
     Brick:
         id: brick_seven
         x: root.width-self.width - 110
-        center_y: root.top - 130
+        center_y: root.top/2 + 170
 
     Brick:
         id: brick_eight
         x: root.width-self.width - 110
-        center_y: root.top - 290
+        center_y: root.top/2 + 10
 
     Brick:
         id: brick_nine
         x: root.width-self.width - 110
-        center_y: root.top - 450
+        center_y: root.top/2 - 150
 
     Brick:
         id: brick_ten
         x: root.width-self.width - 160
-        center_y: root.top - 290
+        center_y: root.top/2 + 10
 
     Paddle:
         id: player

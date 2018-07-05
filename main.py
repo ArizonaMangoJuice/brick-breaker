@@ -55,18 +55,16 @@ class Game(Widget):
     brick8 = ObjectProperty(None)
     brick9 = ObjectProperty(None)
     brick10 = ObjectProperty(None)
-    test = Button(text='hello1')
+    test = Button(text='')
     def __init__(self, *args, **kwargs):
         super(Game, self).__init__(*args, **kwargs)
+        # self.test.bind(on_release = self.serve_ball(vel=(4, 0))
         self.start()
+        
 
-    # def test(self):
-    #     layout = BoxLayout(orientation='vertical')
-    #     b1 = Button(text='button 1')
-    #     b2 = Button(text='button 2')
-    #     layout.add_widget(b1)
-    #     layout.add_widget(b2)
-    #     return layout
+    def hideRestart(self):
+        self.start()
+        self.test.x = -500
 
     def start(self):
         Clock.unschedule(self.update)
@@ -108,7 +106,7 @@ class Game(Widget):
         self.brick9.hitBrick(self.ball)
         self.brick10.hitBrick(self.ball)
         if (
-            self.brick10.x == -150 and
+            self.brick10.x == -150 and 
             self.brick9.x == -150 and 
             self.brick8.x == -150 and
             self.brick7.x == -150 and
@@ -122,11 +120,14 @@ class Game(Widget):
             self.stop()
             self.serve_ball(vel=(4, 0))
             self.reset()
+           
             # self.test.text = 'game Over'
             print(self.parent.height)
             self.test.center_x = self.parent.height / 2
             self.test.center_y = self.parent.height / 2
+            # self.test.on_release =  self.serve_ball(vel=(4, 0))
             print('test x',self.test.center)
+            
             # self.start()
         
         if (self.ball.y < self.y) or (self.ball.top > self.top):
