@@ -83,16 +83,16 @@ class Game(Widget):
 
     # resets all bricks back to original spot
     def reset(self):
-        self.brick1.x = self.width - 35
-        self.brick2.x = self.width - 35
-        self.brick3.x = self.width - 35
-        self.brick4.x = self.width - 85
-        self.brick5.x = self.width - 85
-        self.brick6.x = self.width - 85
-        self.brick7.x = self.width - 135
-        self.brick8.x = self.width - 135
-        self.brick9.x = self.width - 135
-        self.brick10.x = self.width - 185
+        self.brick1.x = self.width - 55
+        self.brick2.x = self.width - 55
+        self.brick3.x = self.width - 55
+        self.brick4.x = self.width - 105
+        self.brick5.x = self.width - 105
+        self.brick6.x = self.width - 105
+        self.brick7.x = self.width - 155
+        self.brick8.x = self.width - 155
+        self.brick9.x = self.width - 155
+        self.brick10.x = self.width - 205
 
     # method for the ball speed and placement
     def serve_ball(self, vel=(-8.574355240000006, 0.48346681823204063)):
