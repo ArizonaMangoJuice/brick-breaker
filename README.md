@@ -21,5 +21,5 @@ Play a fun simple game of the likes of breakout.
 
 
 ## Future Development
-Going to make the game have randomly generated levels
+Going to make the game have randomly generated levels.
 Lower the game size currently zipped is 135 mb, for a simple breakout like game
