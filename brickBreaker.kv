@@ -28,7 +28,6 @@
 <Game>:
     ball: ball
     player1: player
-    # player2: player_right
     brick1: brick_one
     brick2: brick_two
     brick3: brick_three
@@ -39,14 +38,10 @@
     brick8: brick_eight
     brick9: brick_nine
     brick10: brick_ten
-    test: testing
-    canvas:
-        # Rectangle:
-        #     pos: self.center_x-5, 0
-        #     size: 10, self.height
+    restartButton: restart_button
     
     Button:
-        id: testing
+        id: restart_button
         text: 'game Over! Click to play again'
         halign: 'center'
         valign: 'middle'
@@ -54,21 +49,6 @@
         size: 250, self.height
         x: -500
         on_release: root.hideRestart()
-
-
-    # Label:
-    #     font_size: 70  
-    #     center_x: root.width / 4
-    #     top: root.top - 50
-    #     text: str(root.player1.score)
-        
-    # Label:
-    #     id: test_button
-    #     font_size: 70  
-    #     center_x: root.width / 4
-    #     # center_x: root.width * 3 / 4
-    #     top: root.top - 50
-    #     text: 'Game Over'
     
     Ball:
         id: ball
@@ -78,13 +58,11 @@
         id: brick_one
         x: root.width-self.width - 10
         center_y: root.top/2 + 170
-        # 130
 
     Brick:
         id: brick_two
         x: root.width-self.width - 10
         center_y: root.top/2 + 10
-        # 290
 
     Brick:
         id: brick_three
@@ -132,7 +110,6 @@
         center_y: root.center_y
 <Manager>:
     id: screen_manager
-    # test: testing
 
     Screen:
         name: 'home'

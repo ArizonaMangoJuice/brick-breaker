@@ -60,7 +60,7 @@ class Game(Widget):
     brick8 = ObjectProperty(None)
     brick9 = ObjectProperty(None)
     brick10 = ObjectProperty(None)
-    test = Button(text='')
+    restartButton = Button(text='')
 
     # When the class get called start method will run first
     def __init__(self, *args, **kwargs):
@@ -70,7 +70,7 @@ class Game(Widget):
     # hides the gameOver button when the player clicks restart
     def hideRestart(self):
         self.start()
-        self.test.x = -500
+        self.restartButton.x = -500
 
     # starts the clock to let the game run
     def start(self):
@@ -132,8 +132,8 @@ class Game(Widget):
             self.stop()
             self.serve_ball(vel=(4, 0))
             self.reset()
-            self.test.center_x = self.parent.height / 2
-            self.test.center_y = self.parent.height / 2
+            self.restartButton.center_x = self.parent.height / 2
+            self.restartButton.center_y = self.parent.height / 2
         
         # if the ball hits the top or bottom of the screen bounce the ball
         if (self.ball.y < self.y) or (self.ball.top > self.top):
