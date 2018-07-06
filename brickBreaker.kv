@@ -1,8 +1,10 @@
 #:kivy 1.0.9
 
 <Brick>:
-    size: 25, 130
+    size: 25, 100
     canvas:
+        # Color:
+        #     rgb: 1,0,0
         Rectangle:
             pos: self.pos
             size: self.size
@@ -17,6 +19,8 @@
 <Paddle>:
     size: 25, 200
     canvas:
+        Color:
+            rgb: 1,1,0
         Rectangle:
             pos:self.pos
             size:self.size
@@ -75,6 +79,7 @@
         x: root.width-self.width - 10
         center_y: root.top/2 + 170
         # 130
+
     Brick:
         id: brick_two
         x: root.width-self.width - 10

@@ -9,6 +9,7 @@ from kivy.properties import NumericProperty, ReferenceListProperty,\
 from kivy.vector import Vector
 from kivy.clock import Clock
 from random import randint
+from kivy.graphics import Color
 class Brick(Widget):
     def hitBrick(self, ball):
         if self.collide_widget(ball):
@@ -46,6 +47,7 @@ class Game(Widget):
     ball = ObjectProperty(None)
     player1 = ObjectProperty(None)
     brick1 = ObjectProperty(None)
+    # brick1.Color(1, 1, 1, 1)
     brick2 = ObjectProperty(None)
     brick3 = ObjectProperty(None)
     brick4 = ObjectProperty(None)
