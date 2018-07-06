@@ -6,6 +6,9 @@ Play a fun simple game of the likes of breakout.
 Download the game from here 
 windows - https://drive.google.com/open?id=1ZghdieZ2fRdHQ0-ACgdrGdcIGhaK5hN_
 
-###Game Menu
+### Game Menu
 ![alt text](https://gdurl.com/BeGx)
   
+
+### Game
+![alt text](https://gdurl.com/UEtz)
