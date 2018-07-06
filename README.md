@@ -25,4 +25,4 @@ Play a fun simple game of the likes of breakout.
 - Lower the game size, currently zipped is 135 mb.
 
 ## Known Bugs
-- Very rarely the ball will get stuck to the right side of the game
+- Very rarely the ball will get stuck to the right side of the game (1/100 tries)
