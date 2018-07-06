@@ -12,3 +12,14 @@ Play a fun simple game of the likes of breakout.
 
 ### Game
 ![alt text](https://gdurl.com/UEtz)
+
+## Tech/framework used
+
+<b>Built with</b>
+- [Python](https://python.com/)
+- [Kivy](https://kivy.org/)
+
+
+## Future Development
+-Going to make the game have randomly generated levels
+-Lower the game size currently zipped is 135 mb, for a simple breakout like game
